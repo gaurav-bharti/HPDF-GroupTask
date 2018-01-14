@@ -1,0 +1,7 @@
+- alias: hasura
+  config:
+    configmap: controller-conf
+    namespace: eremite26-hasura
+  data: null
+  kubeContext: eremite26
+  name: eremite26
