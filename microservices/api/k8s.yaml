@@ -22,6 +22,12 @@ items:
         - image: hasura/hello-world:latest
           imagePullPolicy: IfNotPresent
           name: api
+          env:
+          - name: mapbox_token
+            valueFrom:
+              secretKeyRef:
+                name: hasura-secrets
+                key: mapboxToken
           ports:
           - containerPort: 8080
             protocol: TCP

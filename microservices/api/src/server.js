@@ -5,7 +5,7 @@ var request = require("request");
 
 var server = require('http').Server(app);
 
-var mapboxToken = process.env.mapboxToken;
+var mapboxToken = process.env.mapbox_token;
 
 app.get('/:sLong/:sLat/:dLong/:dLat', function(req, res) {
   var URL = 'https://api.mapbox.com/directions/v5/mapbox/driving/'+req.params.sLong+','+req.params.sLat+';'+req.params.dLong+','+req.params.dLat+'.json?access_token='+mapboxToken;
