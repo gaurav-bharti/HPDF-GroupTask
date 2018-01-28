@@ -8,7 +8,7 @@ var server = require('http').Server(app);
 var mapboxToken = process.env.mapbox_token;
 
 app.get('/geocoding/forward/:location', function(req, res){
-	var URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/t+'+req.params.location+.json?access_token='+mapboxToken';
+	var URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/t+'+req.params.location+'.json?access_token='+mapboxToken;
 	request(URL, function (error, response, body) {
 		if(!error) {
 			var data = JSON.parse(body);
