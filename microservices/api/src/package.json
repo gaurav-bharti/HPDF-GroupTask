@@ -9,6 +9,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
+    "path": "^0.12.7",
     "request": "^2.83.0"
   }
 }
