@@ -2,10 +2,12 @@ var express = require('express');
 var app = express();
 var router = express.Router();
 var request = require("request");
+var path = require('path');
 
 var server = require('http').Server(app);
 
-var mapboxToken = process.env.mapbox_token;
+//Public access token
+var mapboxToken = 'pk.eyJ1Ijoiam9obmRvZS0iLCJhIjoiY2pidXd1bm92MXJjZzJ3bzBsNGY4NGNvdSJ9.0qO3UooEMGh-UEQzS9Oyaw';//process.env.mapbox_token;
 
 app.get('/geocoding/forward/:location', function(req, res){
 	var URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/t+'+req.params.location+'.json?access_token='+mapboxToken;
@@ -32,7 +34,7 @@ app.get('/:sLong/:sLat/:dLong/:dLat', function(req, res) {
 });
 
 app.get('/', function(req, res) {
-  res.send('Try the URL : '+req.get('host')+'/{Source Longitude}/{Source Latitude}/{Destination Longitude}/{Destination Latitude}');
+	res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(8080, function () {
