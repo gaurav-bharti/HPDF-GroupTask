@@ -3,5 +3,5 @@
     configmap: controller-conf
     namespace: hasura
   data: null
-  kubeContext: immutably63
-  name: immutably63
+  kubeContext: documentation59
+  name: documentation59
