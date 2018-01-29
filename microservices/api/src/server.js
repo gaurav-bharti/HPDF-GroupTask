@@ -22,7 +22,7 @@ app.get('/geocoding/forward/:location', function(req, res){
 });
 
 app.get('/geocoding/backward/:long/:lang', function(req, res){
-	var URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/t+'+req.params.long+','+req.params.lang+'.json?access_token='+mapboxToken;
+	var URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/+'+req.params.long+','+req.params.lang+'.json?access_token='+mapboxToken;
 	request(URL, function (error, response, body) {
 		if(!error) {
 			var data = JSON.parse(body);
