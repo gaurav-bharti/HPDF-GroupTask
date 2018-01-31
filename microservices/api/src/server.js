@@ -21,6 +21,7 @@ app.get('/geocoding/forward/:location', function(req, res){
 	});
 });
 
+
 app.get('/geocoding/backward/:long/:lang', function(req, res){
 	var URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/+'+req.params.long+','+req.params.lang+'.json?access_token='+mapboxToken;
 	request(URL, function (error, response, body) {
@@ -31,6 +32,10 @@ app.get('/geocoding/backward/:long/:lang', function(req, res){
 		else
 			res.status(404).send("Not found");
 	});
+});
+
+app.get('/publictoken/get', function(req, res){
+	res.status(400).send(mapboxToken)
 });
 
 app.get('/:sLong/:sLat/:dLong/:dLat', function(req, res) {
