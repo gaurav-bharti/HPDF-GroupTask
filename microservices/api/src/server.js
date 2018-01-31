@@ -35,7 +35,8 @@ app.get('/geocoding/backward/:long/:lang', function(req, res){
 });
 
 app.get('/publictoken/get', function(req, res){
-	res.status(200).send(JSON.parse({'token':mapboxToken}))
+	var JSONstr = "{'token':"+mapboxToken+"}"
+	res.status(200).send(JSON.parse(JSONstr))
 });
 
 app.get('/:sLong/:sLat/:dLong/:dLat', function(req, res) {
