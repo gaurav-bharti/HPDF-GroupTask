@@ -111,13 +111,18 @@ mapboxgl.accessToken = '${mapboxPublicToken}';
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
-    center: [80.237343,13.040383],
-    zoom: 3.5
+    center: [77.2211202551623,28.59165239360243],
+    zoom: 9
 });
-
 map.addControl(new MapboxDirections({
     accessToken: mapboxgl.accessToken
 }), 'top-left');
+map.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: {
+        enableHighAccuracy: true
+    },
+    trackUserLocation: true
+}));
 </script>
 
 </body>
