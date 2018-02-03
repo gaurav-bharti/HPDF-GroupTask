@@ -1,7 +1,7 @@
 - alias: hasura
   config:
     configmap: controller-conf
-    namespace: hasura
+    namespace: airdrop46-hasura
   data: null
-  kubeContext: documentation59
-  name: documentation59
+  kubeContext: airdrop46
+  name: airdrop46
