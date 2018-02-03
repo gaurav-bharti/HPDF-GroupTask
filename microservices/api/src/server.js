@@ -39,7 +39,7 @@ app.get('/geocoding/backward/:long/:lang', function(req, res){
 });
 
 app.get('/:sLong/:sLat/:dLong/:dLat', function(req, res) {
-  var URL = 'https://api.mapbox.com/directions/v5/mapbox/driving/'+req.params.sLong+','+req.params.sLat+';'+req.params.dLong+','+req.params.dLat+'.json?access_token='+mapboxSecretToken;
+  var URL = 'https://api.mapbox.com/directions/v5/mapbox/driving/'+req.params.sLong+','+req.params.sLat+';'+req.params.dLong+','+req.params.dLat+'?steps=true&geometries=polyline&access_token='+mapboxSecretToken;
   request(URL, function (error, response, body) {
 		if(!error) {
 			var data = JSON.parse(body);
