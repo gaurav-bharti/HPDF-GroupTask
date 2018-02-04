@@ -1,0 +1,5 @@
+.hasura
+react-native/node_modules
+react-native/.expo
+react-native/android
+react-native/ios
