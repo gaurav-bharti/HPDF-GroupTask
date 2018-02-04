@@ -20,11 +20,22 @@ items:
       spec:
         containers:
         - image: hasura/hello-world:latest
+<<<<<<< HEAD
           env:
           - name: PRODUCTION
             value: "true"
           imagePullPolicy: IfNotPresent
           name: api
+=======
+          imagePullPolicy: IfNotPresent
+          name: api
+          env:
+          - name: mapbox_token
+            valueFrom:
+              secretKeyRef:
+                name: hasura-secrets
+                key: mapboxToken
+>>>>>>> f59a6aedcb2e49fc22143861e7afb6656015e00c
           ports:
           - containerPort: 8080
             protocol: TCP
@@ -52,4 +63,8 @@ items:
   status:
     loadBalancer: {}
 kind: List
+<<<<<<< HEAD
 metadata: {}
+=======
+metadata: {}
+>>>>>>> f59a6aedcb2e49fc22143861e7afb6656015e00c

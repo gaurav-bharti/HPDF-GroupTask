@@ -5,6 +5,7 @@ registry: {{ cluster.metadata.registry|json }}
 
 # remotes define which microservices has to be updated when code is pushed to the remote
 remotes:
+<<<<<<< HEAD
   # Example:
 
   # remote-name:
@@ -17,6 +18,11 @@ remotes:
   {{ cluster.name }}:        # DO NOT edit this line
     <<: {}                   # DO NOT edit this line
 
+=======
+  # Default remote to push code and configuration
+  {{ cluster.name }}:
+    <<: {}
+>>>>>>> f59a6aedcb2e49fc22143861e7afb6656015e00c
     '{{ cluster.metadata.namespaces.user }}.api':
       api:
         dockerfile: microservices/api/Dockerfile

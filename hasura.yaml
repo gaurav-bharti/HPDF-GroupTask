@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 name: hello-react-native
+=======
+description: A basic hasura project with a simple nodejs-express app running on it
+keywords: javascript, nodejs, express, getting-started, node
+media: {}
+name: hello-nodejs-express
+>>>>>>> f59a6aedcb2e49fc22143861e7afb6656015e00c
 platformVersion: v0.15.3

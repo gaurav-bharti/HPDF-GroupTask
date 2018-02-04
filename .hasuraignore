@@ -1,4 +1,7 @@
 # gitignore like file
 # files and directories mentioned here will be ignored while publishing to hasura
+<<<<<<< HEAD
 react-native/node_modules
 react-native/.expo
+=======
+>>>>>>> f59a6aedcb2e49fc22143861e7afb6656015e00c

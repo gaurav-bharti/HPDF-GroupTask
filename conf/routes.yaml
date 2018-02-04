@@ -89,7 +89,11 @@
 #   upstreamServicePort  Yes                 -
 #   upstreamServicePath  Yes                 -
 #   enableAuth           No                  true
+<<<<<<< HEAD
 #   authorizationPolicy  No                  null
+=======
+#   restrictToRoles      No                  null
+>>>>>>> f59a6aedcb2e49fc22143861e7afb6656015e00c
 #   corsPolicy           No                  []
 #   enableWebsockets     No                  true
 #   locationDirectives   No                  ""
@@ -101,6 +105,7 @@
 #   - upstreamServicePath:
 #       The path to which the request has to be forwarded
 #   - enableAuth:
+<<<<<<< HEAD
 #       This enables the session middlaware on the gateway to intercept the
 #       request and resolve the user's session based on Authorization header
 #       or the Cookie
@@ -151,6 +156,15 @@
 #             noSessionRedirectUrl: https://auth.{{ cluster.name }}.hasura-app.io/ui/
 #             noAccessRedirectUrl: https://auth.{{ cluster.name }}.hasura-app.io/ui/restricted
 #
+=======
+#       This enables the session middlaware on the gateway to  intercept the
+#       request and resolve the user's session based on Authorization header
+#       or the Cookie
+#   - restrictToRoles:
+#       When the session middleware is enabled, restricts the matched URLs to
+#       be only accessed by users which have at least one of these roles. This
+#       is usually used to restrict access to admin only services like adminer etc.
+>>>>>>> f59a6aedcb2e49fc22143861e7afb6656015e00c
 #   - corsPolicy:
 #       Can take the following 3 values:
 #       1. "allow_all": Cross origin requests from any domain are allowed
@@ -202,9 +216,12 @@ notify:
     upstreamServicePath: /
     upstreamServicePort: 80
     corsPolicy: allow_all
+<<<<<<< HEAD
 
 # To see actual endpoints for these routes, use `$ hasura cluster status`
 
+=======
+>>>>>>> f59a6aedcb2e49fc22143861e7afb6656015e00c
 api:
   /:
     corsPolicy: allow_all
