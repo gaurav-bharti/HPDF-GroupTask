@@ -59,14 +59,18 @@ componentWillMount() {
       },
       routes : []
   });
+
   this.renderRoutes = function renderRoutes() {
         return this.state.routes.map(route =>
           <Route key={'toRoute'} route={route} />);
     }
+
+
   axios.get(`https://api.airdrop46.hasura-app.io/${this.props.navigation.state.params.srcLong}/${this.props.navigation.state.params.srcLat}/${this.props.navigation.state.params.destLong}/${this.props.navigation.state.params.destLat}`)
        .then(response => this.setState({ routes: response.data.routes }));
   console.log(this.state);
 }
+
 
 
 

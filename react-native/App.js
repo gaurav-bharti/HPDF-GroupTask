@@ -203,4 +203,4 @@ const styles = StyleSheet.create({
 });
 
 
-AppRegistry.registerComponent('blog', () => App);
+AppRegistry.registerComponent('hpdfmapapp', () => App);
