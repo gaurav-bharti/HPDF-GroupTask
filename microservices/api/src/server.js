@@ -1,25 +1,5 @@
 var express = require('express');
 var app = express();
-<<<<<<< HEAD
-var request = require('request');
-var router = express.Router();
-var morgan = require('morgan');
-var bodyParser = require('body-parser');
-require('request-debug')(request);
-
-var hasuraExamplesRouter = require('./hasuraExamples');
-
-var server = require('http').Server(app);
-
-router.use(morgan('dev'));
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
-
-app.use('/', hasuraExamplesRouter);
-=======
 var router = express.Router();
 var request = require("request");
 var path = require('path');
@@ -59,7 +39,7 @@ app.get('/geocoding/backward/:long/:lang', function(req, res){
 });
 
 app.get('/:sLong/:sLat/:dLong/:dLat', function(req, res) {
-  var URL = 'https://api.mapbox.com/directions/v5/mapbox/driving/'+req.params.sLong+','+req.params.sLat+';'+req.params.dLong+','+req.params.dLat+'?steps=true&geometries=polyline&overview=full&access_token='+mapboxSecretToken;
+  var URL = 'https://api.mapbox.com/directions/v5/mapbox/driving/'+req.params.sLong+','+req.params.sLat+';'+req.params.dLong+','+req.params.dLat+'.json?access_token='+mapboxSecretToken;
   request(URL, function (error, response, body) {
 		if(!error) {
 			var data = JSON.parse(body);
@@ -131,25 +111,19 @@ mapboxgl.accessToken = '${mapboxPublicToken}';
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
-    center: [77.2211202551623,28.59165239360243],
-    zoom: 9
+    center: [80.237343,13.040383],
+    zoom: 3.5
 });
+
 map.addControl(new MapboxDirections({
     accessToken: mapboxgl.accessToken
 }), 'top-left');
-map.addControl(new mapboxgl.GeolocateControl({
-    positionOptions: {
-        enableHighAccuracy: true
-    },
-    trackUserLocation: true
-}));
 </script>
 
 </body>
 </html>`;
 return template;
 }
->>>>>>> f59a6aedcb2e49fc22143861e7afb6656015e00c
 
 app.listen(8080, function () {
   console.log('Example app listening on port 8080!');

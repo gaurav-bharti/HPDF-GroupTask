@@ -89,11 +89,7 @@
 #   upstreamServicePort  Yes                 -
 #   upstreamServicePath  Yes                 -
 #   enableAuth           No                  true
-<<<<<<< HEAD
-#   authorizationPolicy  No                  null
-=======
 #   restrictToRoles      No                  null
->>>>>>> f59a6aedcb2e49fc22143861e7afb6656015e00c
 #   corsPolicy           No                  []
 #   enableWebsockets     No                  true
 #   locationDirectives   No                  ""
@@ -105,58 +101,6 @@
 #   - upstreamServicePath:
 #       The path to which the request has to be forwarded
 #   - enableAuth:
-<<<<<<< HEAD
-#       This enables the session middlaware on the gateway to intercept the
-#       request and resolve the user's session based on Authorization header
-#       or the Cookie
-#   - authorizationPolicy:
-#       This can be used to restrict access to a microservice when the  microservice
-#       is not aware of users or roles. For example, let's say you want to run some
-#       analytics service (pghero) that should only be allowed for admins:
-#
-#       pghero:
-#         /:
-#           upstreamService:
-#             name: pghero
-#             namespace: {{ cluster.metadata.namespaces.user }}
-#           upstreamServicePath: /
-#           upstreamServicePort: 80
-#           authorizationPolicy:
-#             restrictToRoles: ["admin"]
-#
-#       With this conf, only logged in users with the role admin can access 'metabase' service
-#
-#       Now we need a need a way for the admins to login so that they can access this service.
-#       The auth service has a ui-kit that can be used for this purpose.
-#
-#       pghero:
-#         /:
-#           upstreamService:
-#             name: pghero
-#             namespace: {{ cluster.metadata.namespaces.user }}
-#           upstreamServicePath: /
-#           upstreamServicePort: 80
-#           authorizationPolicy:
-#             restrictToRoles: ["admin"]
-#             noSessionRedirectUrl: https://auth.{{ cluster.name }}.hasura-app.io/ui/
-#
-#       So if there is no session, the gateway redirects the user to the auth serivce's ui to login
-#
-#       Sometimes, additionally we may want to redirect users which do not have access to this page
-#
-#       pghero:
-#         /:
-#           upstreamService:
-#             name: pghero
-#             namespace: {{ cluster.metadata.namespaces.user }}
-#           upstreamServicePath: /
-#           upstreamServicePort: 80
-#           authorizationPolicy:
-#             restrictToRoles: ["admin"]
-#             noSessionRedirectUrl: https://auth.{{ cluster.name }}.hasura-app.io/ui/
-#             noAccessRedirectUrl: https://auth.{{ cluster.name }}.hasura-app.io/ui/restricted
-#
-=======
 #       This enables the session middlaware on the gateway to  intercept the
 #       request and resolve the user's session based on Authorization header
 #       or the Cookie
@@ -164,7 +108,6 @@
 #       When the session middleware is enabled, restricts the matched URLs to
 #       be only accessed by users which have at least one of these roles. This
 #       is usually used to restrict access to admin only services like adminer etc.
->>>>>>> f59a6aedcb2e49fc22143861e7afb6656015e00c
 #   - corsPolicy:
 #       Can take the following 3 values:
 #       1. "allow_all": Cross origin requests from any domain are allowed
@@ -216,12 +159,6 @@ notify:
     upstreamServicePath: /
     upstreamServicePort: 80
     corsPolicy: allow_all
-<<<<<<< HEAD
-
-# To see actual endpoints for these routes, use `$ hasura cluster status`
-
-=======
->>>>>>> f59a6aedcb2e49fc22143861e7afb6656015e00c
 api:
   /:
     corsPolicy: allow_all

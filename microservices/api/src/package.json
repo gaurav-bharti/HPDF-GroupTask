@@ -8,16 +8,8 @@
   "author": "Jaison",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "morgan": "^1.9.0",
-    "request": "^2.83.0",
-    "request-debug": "^0.2.0"
-=======
     "express": "^4.16.2",
     "path": "^0.12.7",
     "request": "^2.83.0"
->>>>>>> f59a6aedcb2e49fc22143861e7afb6656015e00c
   }
 }
