@@ -65,6 +65,11 @@ componentWillMount() {
           <Route key={'toRoute'} route={route} />);
     }
 
+    this.renderDistance = function renderDistance() {
+      return this.state.routes.map(distance =>
+        <Distance key={'toDistance'} distance={distance} />);
+    }
+
 
   axios.get(`https://api.airdrop46.hasura-app.io/${this.props.navigation.state.params.srcLong}/${this.props.navigation.state.params.srcLat}/${this.props.navigation.state.params.destLong}/${this.props.navigation.state.params.destLat}`)
        .then(response => this.setState({ routes: response.data.routes }));
@@ -77,6 +82,7 @@ componentWillMount() {
 
   render() {
  console.log(this.state,'test');
+ console.log(this.state.routes.distance);
     const {state} = this.props.navigation;
     const cord = {
       latitude: state.params.srcLat,
@@ -107,7 +113,9 @@ componentWillMount() {
       apikey={GOOGLE_MAPS_APIKEY}/>
         </MapView>
         </View >
-        <Text>Directions</Text>
+        <View>{this.renderDistance()}</View>
+        <Text>Directions </Text>
+
           <ScrollView >
             {this.renderRoutes()}
             </ScrollView>
@@ -141,6 +149,24 @@ const styles = StyleSheet.create({
  }
 });
 
+class Distance extends React.Component {
+
+constructor(props){
+  super(props)
+    this.state= this.props;
+
+}
+
+render() {
+  return (
+    <Card >
+      <CardSection>
+          <Text> The Distance is {this.state.distance.distance} metres</Text>
+          </CardSection>
+          </Card>
+  );
+}
+}
 
 class Route extends React.Component {
 

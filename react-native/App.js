@@ -53,12 +53,12 @@ class HomeScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return  (
-        <View style={{ margin: 20, padding: 30,flex: 1, justifyContent: 'space-between'}}>
-       <GooglePlacesAutocomplete
+        <View style={{ flex: 1}}>
+       <GooglePlacesAutocomplete style={{zIndex: 1}}
          placeholder="Source"
          minLength={2} // minimum length of text to search
          autoFocus={false}
-         returnKeyType={'search'} // Can be left out for default return key https://facebook.github.io/react-native/docs/textinput.html#returnkeytype
+         returnKeyType={'default'} // Can be left out for default return key https://facebook.github.io/react-native/docs/textinput.html#returnkeytype
          listViewDisplayed="auto" // true/false/undefined
          fetchDetails={true}
          renderDescription={row => row.description} // custom description render
@@ -86,13 +86,15 @@ class HomeScreen extends React.Component {
          styles={{
            description: {
              fontWeight: 'bold',
-             alignItems: 'center'
+             alignItems: 'center',
+
            },
            predefinedPlacesDescription: {
              color: '#1faadb',
              justifyContent: 'center',
              flex: 1,
-             alignItems: 'center'
+             alignItems: 'center',
+
            },
          }}
          // currentLocation={true} // Will add a 'Current location' button at the top of the predefined places list
@@ -114,7 +116,7 @@ class HomeScreen extends React.Component {
          debounce={200}
        />
 
-       <GooglePlacesAutocomplete
+     <GooglePlacesAutocomplete style={{zIndex: -1}}
          placeholder="Destination"
          minLength={2} // minimum length of text to search
          autoFocus={false}
