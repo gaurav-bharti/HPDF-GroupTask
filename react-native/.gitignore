@@ -35,6 +35,10 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
+react-native/.expo/
+react-native/android/
+react-native/ios/
+
 
 # BUCK
 buck-out/
