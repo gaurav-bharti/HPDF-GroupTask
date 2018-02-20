@@ -1,6 +1,14 @@
 Directions - Mapbox - Mobile - App
 ============
+
 A react-native app with backend code for using the mapbox api to allow user to choose source and destination and show the directions and travel time using Google Maps interface.
+
+# Home Screen
+![Logo](homescreen.png)
+
+# Map View
+![Mapview](mapview.png)
+
 
 # Prerequisites
 
@@ -37,7 +45,7 @@ const GOOGLE_MAPS_APIKEY = 'GOOGLE PLACES API HERE';
 
 # Installation
 
-1. Clone the project from hasura following [Quickstart][6]
+1. Clone the project from hasura following [Quickstart][6]    
 2. Go to react-native directory in the project and open terminal in that directory and give ```npm install``` to install all the libraries to the project
 3. Don't forget to link the dependencies with ```react-native link``` 
 4. Run this app by ```react-native run-android.
