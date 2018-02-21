@@ -1,3 +1,6 @@
 .hasura
 node_modules
 npm-debug.log
+react-native/.expo/
+react-native/android/
+react-native/ios/
