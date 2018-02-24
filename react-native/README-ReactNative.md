@@ -48,7 +48,7 @@ const GOOGLE_MAPS_APIKEY = 'GOOGLE PLACES API HERE';
 1. Clone the project from hasura following [Quickstart][6]    
 2. Go to react-native directory in the project and open terminal in that directory and give ```npm install``` to install all the libraries to the project
 3. Don't forget to link the dependencies with ```react-native link``` 
-4. Run this app by ```react-native run-android.
+4. Run this app by ```react-native run-android```.
 
 # Building the apk
 
