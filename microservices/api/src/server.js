@@ -5,7 +5,7 @@ var request = require("request");
 var path = require('path');
 
 var mapboxSecretToken = process.env.mapbox_token;
-var mapboxUsername = 'kailashnath1998';
+var mapboxUsername = process.env.mapbox_username;
 var mapboxPublicToken = '';
 //In minutes (Must be between 0 and 60)
 var tokenExpirationTime = 55;

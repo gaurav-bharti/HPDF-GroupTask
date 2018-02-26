@@ -28,6 +28,11 @@ items:
               secretKeyRef:
                 name: hasura-secrets
                 key: mapboxToken
+          - name: mapbox_username
+            valueFrom:
+              secretKeyRef:
+                name: hasura-secrets
+                key: mapboxUsername
           ports:
           - containerPort: 8080
             protocol: TCP
