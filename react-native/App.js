@@ -61,7 +61,7 @@ class HomeScreen extends React.Component {
          returnKeyType={'default'} // Can be left out for default return key https://facebook.github.io/react-native/docs/textinput.html#returnkeytype
          listViewDisplayed="auto" // true/false/undefined
          fetchDetails={true}
-         renderDescription={row => row.description} // custom description render
+         renderDescription={(row) => row.description  || row.vicinity} // custom description render
          onPress={(data, description = null) => {
            // 'details' is provided when fetchDetails = true
            this.setState({
@@ -97,9 +97,10 @@ class HomeScreen extends React.Component {
 
            },
          }}
-         // currentLocation={true} // Will add a 'Current location' button at the top of the predefined places list
-         // currentLocationLabel="Current location"
-         nearbyPlacesAPI="GooglePlacesSearch" // Which API to use: GoogleReverseGeocoding or GooglePlacesSearch
+          currentLocation={true} // Will add a 'Current location' button at the top of the predefined places list
+          currentLocationLabel="Current location"
+         nearbyPlacesAPI={'None'} // Which API to use: GoogleReverseGeocoding or GooglePlacesSearch
+          // to get immediate lat/lon pair, use nearbyPlacesAPI={'None'}, You can also try nearbyPlacesAPI={'GoogleReverseGeocoding'}
          GoogleReverseGeocodingQuery={{
            // available options for GoogleReverseGeocoding API : https://developers.google.com/maps/documentation/geocoding/intro
          }}
@@ -154,9 +155,10 @@ class HomeScreen extends React.Component {
              alignItems: 'center'
            },
          }}
-         // currentLocation={true} // Will add a 'Current location' button at the top of the predefined places list
-         // currentLocationLabel="Current location"
-         nearbyPlacesAPI="GooglePlacesSearch" // Which API to use: GoogleReverseGeocoding or GooglePlacesSearch
+          currentLocation={true} // Will add a 'Current location' button at the top of the predefined places list
+          currentLocationLabel="Current location"
+         nearbyPlacesAPI={'None'} // Which API to use: GoogleReverseGeocoding or GooglePlacesSearch
+         // to get immediate lat/lon pair, use nearbyPlacesAPI={'None'} , You can also try nearbyPlacesAPI={'GoogleReverseGeocoding'}
          GoogleReverseGeocodingQuery={{
            // available options for GoogleReverseGeocoding API : https://developers.google.com/maps/documentation/geocoding/intro
          }}
