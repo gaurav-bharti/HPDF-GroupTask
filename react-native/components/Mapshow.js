@@ -72,7 +72,11 @@ componentWillMount() {
 
 
   axios.get(`https://api.airdrop46.hasura-app.io/${this.props.navigation.state.params.srcLong}/${this.props.navigation.state.params.srcLat}/${this.props.navigation.state.params.destLong}/${this.props.navigation.state.params.destLat}`)
-       .then(response => this.setState({ routes: response.data.routes }));
+       .then(response => this.setState({ routes: response.data.routes })).catch(err => {
+        console.log(err.response);
+        alert("Please try after 5 minutes, let the cluster wakeup");
+        return err.response;
+      });
   console.log(this.state);
 }
 
